@@ -24,7 +24,7 @@ The proposed system is a web-based Hospital Appointment Reminder and Scheduling 
 - Manage profile
 
 ## Team Members
-Sheila Mwangi | @sheila-mwa ||
-Sumaya Bigenimama | @ ||
+Sheila Mwangi | @Sheila-Mwa ||
+Sumaya Bigenimama | @SumayaBi ||
 Musa Nkurumwa | @musasaningo ||
-Humphrey | @ ||
+Humphrey | @Humphrey779 ||
