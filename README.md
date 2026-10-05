@@ -1,4 +1,4 @@
-# Hospital Appointment Reminder and Scheduling System
+# Hospital Appointment Management System
 
 ## Problem
 Appointments in hospitals are difficult to manage. Patients often forget their scheduled appointments and the hospital sometimes double-books the same time slot for multiple patients. This leads to wasted time, missed care and scheduling conflicts between patients, receptionists and doctors.
