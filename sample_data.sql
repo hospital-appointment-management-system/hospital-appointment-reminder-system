@@ -1,14 +1,14 @@
 INSERT INTO doctors (name, specialization) VALUES
-('Dr. Amina Yusuf', 'General Practice'),
-('Dr. Brian Otieno', 'Dentistry'),
-('Dr. Grace Wambui', 'Pediatrics'),
-('Dr. Samuel Kiptoo', 'Cardiology'),
-('Dr. Linda Achieng', 'Dermatology'),
-('Dr. Peter Mwangi', 'Orthopedics'),
-('Dr. Faith Nyambura', 'Gynecology'),
-('Dr. John Kamau', 'ENT (Otolaryngology)'),
-('Dr. Mercy Chebet', 'Psychiatry'),
-('Dr. David Omondi', 'Ophthalmology');
+('Amina Yusuf', 'General Practice'),
+('Brian Otieno', 'Dentistry'),
+('Grace Wambui', 'Pediatrics'),
+('Samuel Kiptoo', 'Cardiology'),
+('Linda Achieng', 'Dermatology'),
+('Peter Mwangi', 'Orthopedics'),
+('Faith Nyambura', 'Gynecology'),
+('John Kamau', 'ENT (Otolaryngology)'),
+('Mercy Chebet', 'Psychiatry'),
+('David Omondi', 'Ophthalmology');
 
 INSERT INTO time_slots (doctor_id, slot_date, start_time, end_time, is_available) VALUES
 (1, '2026-10-20', '09:00', '09:30', 0),  -- already booked, for testing the "unavailable" case
