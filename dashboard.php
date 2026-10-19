@@ -9,19 +9,31 @@ if (!isset($_SESSION['patient_id'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Patient Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f9; padding: 40px; }
-        .header { display: flex; justify-content: space-between; align-items: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .logout-btn { background: #dc3545; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; }
-        .logout-btn:hover { background: #c82333; }
-    </style>
+    <title>Home - Hospital Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h2>Welcome, <?= htmlspecialchars($_SESSION['patient_name']) ?>!</h2>
-        <a href="logout.php" class="logout-btn">Logout</a>
+    <?php include 'navbar.php'; ?>
+
+    <div class="page-container">
+        <div class="welcome-banner">
+            <h1>Welcome back, <?= htmlspecialchars($_SESSION['patient_name']) ?>!</h1>
+            <p>Here's what you can do today.</p>
+        </div>
+
+        <div class="action-grid">
+            <a href="availability.php" class="action-card">
+                <div class="action-icon">📅</div>
+                <h3>View Availability &amp; Book</h3>
+                <p>See open doctor time slots and book an appointment.</p>
+            </a>
+
+            <a href="profile.php" class="action-card">
+                <div class="action-icon">👤</div>
+                <h3>My Profile</h3>
+                <p>View your personal details on file.</p>
+            </a>
+        </div>
     </div>
-    <p>This is your patient dashboard where you can book and view your hospital appointments.</p>
 </body>
 </html>

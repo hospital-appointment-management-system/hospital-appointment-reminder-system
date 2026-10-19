@@ -1,14 +1,19 @@
 <?php
 session_start();
-require 'db.php';                
+require 'db.php';
 
 if (!isset($_SESSION['patient_id'])) {
-    echo "Please log in first.";
+    header("Location: login.php");
     exit;
 }
 
 $patientId = $_SESSION['patient_id'];
-$slotId = $_POST['slot_id'];
+$slotId = $_POST['slot_id'] ?? null;
+
+if (!$slotId) {
+    header("Location: availability.php?status=error&msg=" . urlencode("Please choose a time slot before booking."));
+    exit;
+}
 
 $pdo->beginTransaction();
 try {
@@ -23,13 +28,13 @@ try {
         $pdo->prepare("UPDATE time_slots SET is_available = 0 WHERE slot_id = ?")
             ->execute([$slotId]);
         $pdo->commit();
-        echo "Appointment booked successfully!";
+        header("Location: availability.php?status=success&msg=" . urlencode("Appointment booked successfully!"));
     } else {
         $pdo->rollBack();
-        echo "Sorry, this slot was just booked by someone else. Please choose another.";
+        header("Location: availability.php?status=error&msg=" . urlencode("Sorry, this slot was just booked by someone else. Please choose another."));
     }
 } catch (Exception $e) {
     $pdo->rollBack();
-    echo "Something went wrong. Please try again.";
+    header("Location: availability.php?status=error&msg=" . urlencode("Something went wrong. Please try again."));
 }
-?>
+exit;
